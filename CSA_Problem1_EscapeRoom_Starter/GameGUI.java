@@ -30,6 +30,19 @@ public class GameGUI extends JComponent
   private static final int GRID_H = 5;
   private static final int START_LOC_X = 15;
   private static final int START_LOC_Y = 15;
+
+  /** Get method for GRID_W
+    @return Reterns the number of horizontal cells
+  */ 
+  public static int getGridW(){
+    return GRID_W;
+  }
+  /** Get method for GRID_H
+    @return Reterns the number of vertical cells
+  */ 
+  public static int getGridH(){
+    return GRID_H;
+  }
   
   // initial placement of player
   int x = START_LOC_X; 
@@ -284,6 +297,7 @@ public class GameGUI extends JComponent
       {
         System.out.println("YOU PICKED UP A PRIZE!");
         p.setSize(0,0);
+        score+=1;
         repaint();
         return prizeVal;
       }
@@ -396,7 +410,7 @@ public class GameGUI extends JComponent
       g2.fill(t);
     }
 
-    g.drawImage(finishImage, 300, 300, 40, 40, null);
+    g.drawImage(finishImage, 420, 245, 60, 60, null);
 
     // add prizes
     for (Rectangle p : prizes)
@@ -494,10 +508,12 @@ public class GameGUI extends JComponent
    * Checks if player as at the far right of the board 
    * @return positive score for reaching the far right wall, penalty otherwise
    */
+  public int score;
+  
   private int playerAtEnd() 
   {
     int score;
-
+    
     double px = playerLoc.getX();
     if (px > (WIDTH - 2*SPACE_SIZE))
     {

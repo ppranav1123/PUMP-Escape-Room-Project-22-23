@@ -1,4 +1,3 @@
-
 /*
 * Problem 1: Escape Room
 * 
@@ -13,8 +12,11 @@ import java.util.Scanner;
  * of the screen in the fewest steps, while avoiding obstacles and collecting
  * prizes.
  */
-public class EscapeRoom {
 
+public class EscapeRoom {
+  // public int score;
+  private static int xCell = 1;
+  private static int yCell = 1;
   // describe the game with brief welcome message
   // determine the size (length and width) a player must move to stay within the
   // grid markings
@@ -52,44 +54,78 @@ public class EscapeRoom {
 
   public static boolean movePlayer(String move, GameGUI game, String[] commands, int score) {
     if (move.equals("right") || move.equals("r")) {
-      game.movePlayer(60, 0);
+      if (game.movePlayer(60, 0) == 0) {
+        EscapeRoom.xCell += 1;
+    //System.out.println("x: " + EscapeRoom.xCell + ", y: " + EscapeRoom.yCell);
+      }
       score += 10;
+      System.out.println(score);
     }
     if (move.equals("left") || move.equals("l")) {
-      game.movePlayer(-60, 0);
+      if (game.movePlayer(-60, 0) == 0) {
+        EscapeRoom.xCell -= 1;
+    //System.out.println("x: " + EscapeRoom.xCell + ", y: " + EscapeRoom.yCell);
+      }
       score += 10;
+      System.out.println(score);
     }
     if (move.equals("down") || move.equals("d")) {
-      game.movePlayer(0, 60);
+      if (game.movePlayer(0, 60) == 0) {
+        EscapeRoom.yCell += 1;
+      }
+    //System.out.println("x: " + EscapeRoom.xCell + ", y: " + EscapeRoom.yCell);
       score += 10;
+      System.out.println(score);
     }
     if (move.equals("up") || move.equals("u")) {
-      game.movePlayer(0, -60);
+      if (game.movePlayer(0, -60) == 0) {
+        EscapeRoom.yCell -= 1;
+    //System.out.println("x: " + EscapeRoom.xCell + ", y: " + EscapeRoom.yCell);
+      }
       score += 10;
+      System.out.println(score);
     }
     if (move.equals("jump") || move.equals("jr")) {
-      game.movePlayer(123, 0);
+      if (game.movePlayer(123, 0) == 0) {
+        EscapeRoom.xCell += 2;
+    //System.out.println("x: " + EscapeRoom.xCell + ", y: " + EscapeRoom.yCell);
+      }
       score += 10;
+      System.out.println(score);
     }
     if (move.equals("jumpleft") || move.equals("jl")) {
-      game.movePlayer(-123, 0);
+      if (game.movePlayer(-123, 0) == 0) {
+        EscapeRoom.xCell -= 2;
+    //System.out.println("x: " + EscapeRoom.xCell + ", y: " + EscapeRoom.yCell);
+      }
       score += 10;
+      System.out.println(score);
     }
     if (move.equals("jumpup") || move.equals("ju")) {
-      game.movePlayer(0, -123);
+      if (game.movePlayer(0, -123) == 0) {
+        EscapeRoom.yCell += 2;
+    //System.out.println("x: " + EscapeRoom.xCell + ", y: " + EscapeRoom.yCell);
+      }
       score += 10;
+      System.out.println(score);
     }
     if (move.equals("jumpdown") || move.equals("jd")) {
-      game.movePlayer(0, 123);
+      if (game.movePlayer(0, 123) == 0) {
+        EscapeRoom.yCell -= 2;
+    //System.out.println("x: " + EscapeRoom.xCell + ", y: " + EscapeRoom.yCell);
+      }
       score += 10;
+      System.out.println(score);
     }
-    if (move.equals("pickup")) {
+    if (move.equals("pickup") || move.equals("p")) {
       game.pickupPrize();
       score += 10;
+      System.out.println(score);
     }
     if (move.equals("quit") || move.equals("q")) {
       System.out.println("Your score was: " + score);
       game.endGame();
+      System.out.println(score);
     }
     if (move.equals("replay")) {
       System.out.println("Your score was: " + score);
@@ -97,6 +133,9 @@ public class EscapeRoom {
     }
     if (move.equals("help me") || move.equals("?")) {
       System.out.println(commands);
+    }
+    if (EscapeRoom.xCell == GameGUI.getGridW() && EscapeRoom.yCell == GameGUI.getGridH()) {
+      game.endGame();
     }
     return true;
   }
