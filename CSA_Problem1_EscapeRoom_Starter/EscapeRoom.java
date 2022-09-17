@@ -59,7 +59,7 @@ public class EscapeRoom {
     //System.out.println("x: " + EscapeRoom.xCell + ", y: " + EscapeRoom.yCell);
       }
       score += 10;
-      System.out.println(score);
+      System.out.println("Your score is: "+score);
     }
     if (move.equals("left") || move.equals("l")) {
       if (game.movePlayer(-60, 0) == 0) {
@@ -67,7 +67,7 @@ public class EscapeRoom {
     //System.out.println("x: " + EscapeRoom.xCell + ", y: " + EscapeRoom.yCell);
       }
       score += 10;
-      System.out.println(score);
+      System.out.println("Your score was: "+score);
     }
     if (move.equals("down") || move.equals("d")) {
       if (game.movePlayer(0, 60) == 0) {
@@ -75,7 +75,7 @@ public class EscapeRoom {
       }
     //System.out.println("x: " + EscapeRoom.xCell + ", y: " + EscapeRoom.yCell);
       score += 10;
-      System.out.println(score);
+      System.out.println("Your score is: "+score);
     }
     if (move.equals("up") || move.equals("u")) {
       if (game.movePlayer(0, -60) == 0) {
@@ -83,7 +83,7 @@ public class EscapeRoom {
     //System.out.println("x: " + EscapeRoom.xCell + ", y: " + EscapeRoom.yCell);
       }
       score += 10;
-      System.out.println(score);
+      System.out.println("Your score is: "+score);
     }
     if (move.equals("jump") || move.equals("jr")) {
       if (game.movePlayer(123, 0) == 0) {
@@ -91,7 +91,7 @@ public class EscapeRoom {
     //System.out.println("x: " + EscapeRoom.xCell + ", y: " + EscapeRoom.yCell);
       }
       score += 10;
-      System.out.println(score);
+      System.out.println("Your score is: "+score);
     }
     if (move.equals("jumpleft") || move.equals("jl")) {
       if (game.movePlayer(-123, 0) == 0) {
@@ -99,7 +99,7 @@ public class EscapeRoom {
     //System.out.println("x: " + EscapeRoom.xCell + ", y: " + EscapeRoom.yCell);
       }
       score += 10;
-      System.out.println(score);
+      System.out.println("Your score is: "+score);
     }
     if (move.equals("jumpup") || move.equals("ju")) {
       if (game.movePlayer(0, -123) == 0) {
@@ -107,7 +107,7 @@ public class EscapeRoom {
     //System.out.println("x: " + EscapeRoom.xCell + ", y: " + EscapeRoom.yCell);
       }
       score += 10;
-      System.out.println(score);
+      System.out.println("Your score is: "+score);
     }
     if (move.equals("jumpdown") || move.equals("jd")) {
       if (game.movePlayer(0, 123) == 0) {
@@ -115,17 +115,16 @@ public class EscapeRoom {
     //System.out.println("x: " + EscapeRoom.xCell + ", y: " + EscapeRoom.yCell);
       }
       score += 10;
-      System.out.println(score);
+      System.out.println("Your score is: "+score);
     }
     if (move.equals("pickup") || move.equals("p")) {
       game.pickupPrize();
       score += 10;
-      System.out.println(score);
+      System.out.println("Your score is: "+score);
     }
     if (move.equals("quit") || move.equals("q")) {
       System.out.println("Your score was: " + score);
       game.endGame();
-      System.out.println(score);
     }
     if (move.equals("replay")) {
       System.out.println("Your score was: " + score);
@@ -177,7 +176,7 @@ public class EscapeRoom {
       // take input
       System.out.print("Enter a Move: ");
       String player_move = in.nextLine();
-      System.out.println("The move you entered is: " + player_move);
+      //System.out.println("The move you entered is: " + player_move);
 
       // check if input is valid
       boolean check = check_if_in(validCommands, player_move);
@@ -189,6 +188,7 @@ public class EscapeRoom {
       } else {
         System.out.println("Not a valid command");
         score = score - 30;
+        System.out.println("Your score is: "+score);
       }
 
     }
