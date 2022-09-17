@@ -37,6 +37,7 @@ public class GameGUI extends JComponent
 
   // grid image to show in background
   private Image bgImage;
+  private Image finishImage;
 
   // player image and info
   private Image player;
@@ -68,21 +69,27 @@ public class GameGUI extends JComponent
    */
   public GameGUI()
   {
+
+    try {
+      finishImage = ImageIO.read(new   File("CSA_Problem1_EscapeRoom_Starter/finish.png"));      
+    } catch (Exception e) {
+      System.err.println("Could not open finish.png");
+    } 
     
     try {
-      bgImage = ImageIO.read(new File("grid.png"));      
+      bgImage = ImageIO.read(new   File("CSA_Problem1_EscapeRoom_Starter/grid.png"));      
     } catch (Exception e) {
       System.err.println("Could not open file grid.png");
     }      
     try {
-      prizeImage = ImageIO.read(new File("coin.png"));      
+      prizeImage = ImageIO.read(new File("CSA_Problem1_EscapeRoom_Starter/coin.png"));      
     } catch (Exception e) {
       System.err.println("Could not open file coin.png");
     }
   
     // player image, student can customize this image by changing file on disk
     try {
-      player = ImageIO.read(new File("player.png"));      
+      player = ImageIO.read(new File("CSA_Problem1_EscapeRoom_Starter/player.png"));      
     } catch (Exception e) {
      System.err.println("Could not open file player.png");
     }
@@ -388,6 +395,8 @@ public class GameGUI extends JComponent
       g2.setPaint(Color.WHITE); 
       g2.fill(t);
     }
+
+    g.drawImage(finishImage, 300, 300, 40, 40, null);
 
     // add prizes
     for (Rectangle p : prizes)
