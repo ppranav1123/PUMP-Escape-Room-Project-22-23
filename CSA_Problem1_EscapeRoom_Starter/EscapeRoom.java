@@ -50,7 +50,7 @@ public class EscapeRoom {
     return exists;
   }
 
-  public static int movePlayer(String move, GameGUI game, String[] commands, int score) {
+  public static boolean movePlayer(String move, GameGUI game, String[] commands, int score) {
     if (move.equals("right") || move.equals("r")) {
       game.movePlayer(60, 0);
       score += 10;
@@ -98,7 +98,7 @@ public class EscapeRoom {
     if (move.equals("help me") || move.equals("?")) {
       System.out.println(commands);
     }
-    return score;
+    return true;
   }
 
   public static void main(String[] args) {
@@ -144,9 +144,12 @@ public class EscapeRoom {
       boolean check = check_if_in(validCommands, player_move);
       if (check == true) {
         System.out.println("Valid Command");
-        score += movePlayer(player_move, game, validCommands, score);
+        if (movePlayer(player_move, game, validCommands, score) == true) {
+          score += 10;
+        }
       } else {
         System.out.println("Not a valid command");
+        score = score - 30;
       }
 
     }
