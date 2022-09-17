@@ -53,39 +53,39 @@ public class EscapeRoom {
   public static int movePlayer(String move, GameGUI game, String[] commands, int score) {
     if (move.equals("right") || move.equals("r")) {
       game.movePlayer(60, 0);
-      score+=10;
+      score += 10;
     }
     if (move.equals("left") || move.equals("l")) {
       game.movePlayer(-60, 0);
-      score+=10;
+      score += 10;
     }
     if (move.equals("down") || move.equals("d")) {
       game.movePlayer(0, 60);
-      score+=10;
+      score += 10;
     }
     if (move.equals("up") || move.equals("u")) {
       game.movePlayer(0, -60);
-      score+=10;
+      score += 10;
     }
     if (move.equals("jump") || move.equals("jr")) {
       game.movePlayer(123, 0);
-      score+=10;
+      score += 10;
     }
     if (move.equals("jumpleft") || move.equals("jl")) {
       game.movePlayer(-123, 0);
-      score+=10;
+      score += 10;
     }
     if (move.equals("jumpup") || move.equals("ju")) {
       game.movePlayer(0, -123);
-      score+=10;
+      score += 10;
     }
     if (move.equals("jumpdown") || move.equals("jd")) {
       game.movePlayer(0, 123);
-      score+=10;
+      score += 10;
     }
     if (move.equals("pickup")) {
       game.pickupPrize();
-      score+=10;
+      score += 10;
     }
     if (move.equals("quit") || move.equals("q")) {
       System.out.println("Your score was: " + score);
@@ -95,7 +95,7 @@ public class EscapeRoom {
       System.out.println("Your score was: " + score);
       game.replay();
     }
-    if (move.equals("help me"||move.equals("?"))) {
+    if (move.equals("help me") || move.equals("?")) {
       System.out.println(commands);
     }
     return score;
@@ -144,7 +144,7 @@ public class EscapeRoom {
       boolean check = check_if_in(validCommands, player_move);
       if (check == true) {
         System.out.println("Valid Command");
-        score+=movePlayer(player_move, game, validCommands, score);
+        score += movePlayer(player_move, game, validCommands, score);
       } else {
         System.out.println("Not a valid command");
       }
