@@ -135,6 +135,7 @@ public class EscapeRoom {
     }
     if (EscapeRoom.xCell == GameGUI.getGridW() && EscapeRoom.yCell == GameGUI.getGridH()) {
       game.endGame();
+      System.out.println("YOU MADE IT!");
     }
     return true;
   }

@@ -517,12 +517,12 @@ public class GameGUI extends JComponent
     double px = playerLoc.getX();
     if (px > (WIDTH - 2*SPACE_SIZE))
     {
-      System.out.println("YOU MADE IT!");
+      //System.out.println("YOU MADE IT!");
       score = endVal;
     }
     else
     {
-      System.out.println("OOPS, YOU QUIT TOO SOON!");
+      //System.out.println("OOPS, YOU QUIT TOO SOON!");
       score = -endVal;
     }
     return score;
