@@ -5,12 +5,6 @@
 * 10/10/2019
 * Copyright(c) 2019 PLTW to present. All rights reserved
 */
-
-
-// Documentation
-// Slides: https://docs.google.com/presentation/d/1TwrrkISWP74avFwba3P319WUe687xeTGkQ7IGu1RuEk/edit?usp=sharing
-// Google Document of Logs and PLTW Entries: https://docs.google.com/document/d/1df15vScpwp7Gn7xaoCxQEXoDtM13i929ZSMQ2mkV7qk/edit?usp=sharing
-// Milestone spreadsheet: https://docs.google.com/spreadsheets/d/1Mnkrk4QernrQFgQOT1wvvV1GEu94ffB8f6IWbDZ9SA0/edit?usp=sharing
 import java.util.Scanner;
 
 /**
