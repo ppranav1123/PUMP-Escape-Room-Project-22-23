@@ -6,7 +6,7 @@
 * Copyright(c) 2019 PLTW to present. All rights reserved
 */
 import java.util.Scanner;
-
+import java.util.*;
 /**
  * Create an escape room game where the player must navigate to the other side
  * of the screen in the fewest steps, while avoiding obstacles and collecting
@@ -131,7 +131,7 @@ public class EscapeRoom {
       game.replay();
     }
     if (move.equals("help me") || move.equals("?")) {
-      System.out.println(commands);
+      System.out.println(Arrays.toString(commands));
     }
     if (EscapeRoom.xCell == GameGUI.getGridW() && EscapeRoom.yCell == GameGUI.getGridH()) {
       game.endGame();
