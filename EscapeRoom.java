@@ -59,7 +59,7 @@ public class EscapeRoom {
     //System.out.println("x: " + EscapeRoom.xCell + ", y: " + EscapeRoom.yCell);
       }
       score += 10;
-      System.out.println("Your score is: "+score);
+      Sysrem
     }
     if (move.equals("left") || move.equals("l")) {
       if (game.movePlayer(-60, 0) == 0) {
