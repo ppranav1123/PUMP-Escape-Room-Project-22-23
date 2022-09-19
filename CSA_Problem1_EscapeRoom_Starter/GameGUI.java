@@ -13,6 +13,8 @@ import javax.imageio.ImageIO;
 
 import java.util.Random;
 
+//public int score;
+
 /**
  * A Game board on which to place and move players.
  * 
@@ -67,11 +69,11 @@ public class GameGUI extends JComponent
   private Rectangle[] traps;
 
   // scores, sometimes awarded as (negative) penalties
-  private int prizeVal = 10;
-  private int trapVal = 5;
-  private int endVal = 10;
-  private int offGridVal = 5; // penalty only
-  private int hitWallVal = 5;  // penalty only
+  public int prizeVal = 10;
+  public int trapVal = 5;
+  public int endVal = 10;
+  public int offGridVal = 5; // penalty only
+  public int hitWallVal = 5;  // penalty only
 
   // game frame
   private JFrame frame;
@@ -515,7 +517,8 @@ public class GameGUI extends JComponent
     int score;
     
     double px = playerLoc.getX();
-    if (px > (WIDTH - 2*SPACE_SIZE))
+    double py = playerLoc.getY();
+    if ((px > (WIDTH - 2*SPACE_SIZE)) && (py > (HEIGHT - 2*SPACE_SIZE)))
     {
       //System.out.println("YOU MADE IT!");
       score = endVal;
